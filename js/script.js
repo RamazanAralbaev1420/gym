@@ -1,3 +1,6 @@
+const linkYes = `https://amazon.pl/?vote=yes`; //здесь нужго водить линки
+const linkNo = `https://amazon.pl/?vote=no`;  //здесь нужго водить линки
+
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: true,
@@ -72,41 +75,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // only_mobile container
-
 window.addEventListener('load', function () {
-  function showMobileContent() {
-    const container = document.querySelector('#accept_mobile_container');
-    if (window.innerWidth < 768) {
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const gclid = urlParams.get('gclid');
+  const mobile_content_no = document.querySelector('#mobile_content_no');
+  const mobile_content_yes = document.querySelector('#mobile_content_yes');
+  const container = document.querySelector('#accept_mobile_container');
 
-      if (!container.querySelector('.accept')) {
-        let mobileContent = `
-          <div class="accept">
-            <div class="accept_title">
-              <h2>18 yaşında mısın?</h2>
-            </div>
-            <div class="accept_btns">
-              <div class="accept_btn default_btn no_btn_accept">
-                <a href="https://" class="mobile_content_btn">Hayir</a>
-              </div>
-              <div class="accept_btn default_btn yes_btn_accept">
-                <a href="https://" class="mobile_content_btn">Evet</a>
-              </div>
-            </div>
-          </div>`;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const gclid = urlParams.get('gclid');
 
-        container.innerHTML = mobileContent;
-      }
-    } else {
-      container.innerHTML = '';
-    }
-  }
-
-  showMobileContent();
-
-  window.addEventListener('resize', showMobileContent);
+  mobile_content_no.href = linkNo + gclid;
+  mobile_content_yes.href = linkYes + gclid;
 });
 
 // coockie

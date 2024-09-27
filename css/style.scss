@@ -59,6 +59,10 @@ body {
   }
 }
 
+#accept_mobile_container {
+  display: none;
+}
+
 //
 
 button {
@@ -652,6 +656,10 @@ input::-webkit-inner-spin-button {
       flex-direction: column;
       align-items: center;
     }
+  }
+
+  #accept_mobile_container {
+    display: block;
   }
 }
 @media (max-width: 575.98px) {
