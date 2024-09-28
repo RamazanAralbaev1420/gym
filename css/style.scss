@@ -26,9 +26,10 @@ body {
   height: 100%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  background-color: #1a1c20;
+  background-color: #1a1c2021;
   color: #fff;
   font-size: 16px;
+  background-color: #1b1c20;
 }
 
 // ====================================modals=====
@@ -40,7 +41,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  background-image: url('../images/accept_back.webp');
+  background-image: url('../images/accept-back.webp');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -75,17 +76,17 @@ button {
 .default_btn {
   width: 100%;
   height: 50px;
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff4d00;
+  background-color: #819d26;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.3s linear;
   &:hover {
     background-color: #fff;
-    color: #ff4d00;
+    color: #819d26;
   }
 
   button {
@@ -112,7 +113,6 @@ header {
   width: 100%;
   height: 80px;
   position: fixed;
-  top: 0;
   left: 0;
   z-index: 5000000;
 }
@@ -142,13 +142,14 @@ header.scrolled {
   transition: color 0.2s linear;
   font-weight: 600;
   &:hover {
-    color: #ff4d00;
+    color: #819d26;
   }
 }
 
 .header {
   width: 100%;
   height: 80px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -164,10 +165,6 @@ header.scrolled {
       height: 80px;
     }
   }
-}
-
-p {
-  color: #879da9;
 }
 
 .close_btn {
@@ -249,8 +246,18 @@ p {
   height: 100vh;
   background-image: url('../images/hero-section.webp');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center center;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1613136e;
+  }
 }
 
 .hero-section {
@@ -261,10 +268,14 @@ p {
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  position: relative;
+  left: 0;
+  z-index: 30;
   &_title {
     display: flex;
     justify-content: flex-start;
     margin-top: 100px;
+    font-size: 28px;
   }
 
   &_description {
@@ -276,290 +287,266 @@ p {
   }
 }
 
-/* about us */
-#about_us {
-  margin: 100px 0;
+#gods {
+  padding: 100px 0;
+  background-image: url('../images/back.jpg');
 }
 
-.about_us {
+.gods {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  &_left {
-    width: 50%;
+  flex-direction: column;
 
-    &_title {
-      margin-bottom: 30px;
-    }
+  &-title {
+    text-align: center;
+    margin-bottom: 50px;
   }
-
-  &_right {
-    width: 50%;
+  &-cards {
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    .about_us_image {
+    flex-wrap: wrap;
+    gap: 50px;
+    &-card {
+      width: 47%;
+      height: 360px;
+      position: relative;
+      left: 0;
       overflow: hidden;
-      padding: 6px;
+      border-radius: 20px;
 
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        overflow: hidden;
+        transition: all 0.2s linear;
+        border-radius: 20px;
+
+        &:hover {
+          scale: 1.1;
+        }
       }
     }
   }
 }
 
-.cardBox {
-  border-radius: 10px;
-  box-shadow: 3px 2px 7px rgba(250, 250, 250, 0.4);
+#select-hero {
+  padding: 100px 0 0px 0;
 }
 
-/* our classes */
-#our_classes {
-  margin: 100px 0;
-}
-
-.our_classes {
+.select-hero {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 
-  &_description {
-    width: 60%;
-    margin-top: 10px;
-    text-align: center;
-    margin-bottom: 50px;
-  }
+  &-left {
+    width: 50%;
+    min-height: 360px;
 
-  &_cards {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: -15px;
-    &_card {
-      width: calc(100% / 3 - 30px);
-      height: 400px;
+    img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 20px;
       overflow: hidden;
-      margin: 15px;
-      &_image {
-        width: 100%;
-        height: 65%;
+    }
+  }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+  &-right {
+    width: 50%;
+    padding: 20px 0 0;
 
-      &_info {
-        height: 35%;
-        padding: 0 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-        &_title {
-          margin-bottom: 10px;
-        }
-      }
+    &-title {
+      margin-bottom: 20px;
     }
   }
 }
 
-// #team
-#team {
-  margin: 100px 0;
+#survivor {
+  width: 100%;
+  padding: 100px 0;
 }
 
-.team {
+.survivor {
   width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 
-  &_description {
-    width: 60%;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 50px;
-  }
-
-  &_cards {
+  &-left {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    &_card,
-    .swiper-slide {
-      width: calc(100% / 3);
-
-      height: 504px;
-
-      &_image {
-        width: 100%;
-        height: 85%;
-        overflow: hidden;
-
-        img {
-          object-fit: cover;
-        }
-      }
-
-      &_info {
-        width: 100%;
-        height: 15%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+    text-align: center;
+    padding-top: 20px;
+    &-title {
+      margin-bottom: 20px;
     }
   }
-}
 
-.team_cards_card_info {
-  padding: 15px;
-  text-align: center;
-}
-
-.orange-text {
-  color: orange;
-}
-
-//
-
-#select_plan {
-  margin: 100px 0;
-}
-
-.select_plan {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &_description {
-    width: 60%;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  &_cards {
+  &-right {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
     gap: 30px;
-    &_card {
-      width: calc(100% / 3);
+    img {
+      width: 50%;
+      border-radius: 20px;
       height: 400px;
-      padding: 20px;
+    }
+  }
+}
+
+#war {
+  padding: 100px 0;
+}
+
+.war {
+  width: 100%;
+  display: flex;
+  min-height: 600px;
+  flex-direction: column;
+
+  &-title {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  &-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-left {
+    width: 50%;
+  }
+
+  &-right {
+    width: 50%;
+
+    &-images {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
-
-      &_title {
-        color: #ff4d00;
-      }
-
-      &_price {
-        font-size: 40px;
-      }
-
-      &_items {
+      gap: 20px;
+      &-image {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .skill-info {
+          width: 100%;
+          border-radius: 10px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          flex-direction: column;
+          background-color: #f39812;
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 10px;
+        }
       }
     }
   }
 }
 
-.select_plan_cards_card_btn {
-  width: 100%;
+#politicCheck {
+  background-color: red;
 }
-
-.contacts_af {
-  width: 100%;
+.checkText {
   display: flex;
-  gap: 50px;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  input {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    margin-top: 6px;
+  }
+  span {
+    width: 100%;
+  }
+}
+#form {
+  width: 100%;
+  padding-top: 100px;
+  height: 450px;
+  background-image: url('../images/form-back.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
 
-  .contacts_adress {
-    width: 46%;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #0000004d;
+  }
+
+  .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .contacts_form {
-    width: 46%;
-  }
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.form_inner {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
-
-  .checkText {
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 30;
+    font-size: 20px;
     gap: 20px;
-    font-size: 14px;
-    input {
-      width: 20px;
-      height: 20px;
-      margin-left: 6px;
-      margin-top: 6px;
+    &-input {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      form {
+        width: 60%;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        input {
+          font-size: 20px;
+          padding: 5px 15px;
+        }
+
+        .for {
+          display: flex;
+          gap: 5px;
+        }
+
+        button {
+          width: 30%;
+          border-radius: 0;
+        }
+      }
     }
-  }
 
-  .name_phone {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-  }
-
-  input {
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border: 1px solid gray;
-    padding: 7px 10px;
-    border-radius: 50px;
-    color: #fff;
-    font-size: 18px;
-    display: flex;
-    gap: 20px;
+    svg {
+      fill: #819d26;
+    }
   }
 }
 
 #footer {
-  margin-top: 100px;
   border-top: 1px solid gray;
+  background-color: #1a1c20;
 }
 .footer {
   width: 100%;
+  height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -617,30 +604,6 @@ input::-webkit-inner-spin-button {
     align-items: center;
   }
 
-  .about_us {
-    flex-direction: column;
-
-    &_left {
-      width: 100%;
-
-      &_title {
-        text-align: center;
-      }
-    }
-
-    &_right {
-      width: 100%;
-    }
-  }
-
-  .our_classes_cards {
-    flex-wrap: wrap;
-
-    &_card {
-      width: 42%;
-    }
-  }
-
   .footer {
     flex-direction: column;
 
@@ -661,6 +624,10 @@ input::-webkit-inner-spin-button {
   #accept_mobile_container {
     display: block;
   }
+
+  .survivor {
+    border-top: 1px solid gray;
+  }
 }
 @media (max-width: 575.98px) {
   .container {
@@ -668,54 +635,72 @@ input::-webkit-inner-spin-button {
     padding: 0 16px;
   }
 
-  .our_classes_cards {
-    flex-wrap: wrap;
-
-    &_card {
-      width: 100%;
-    }
-  }
-  .team_cards_card_image {
-    width: 100%;
-    img {
-      object-fit: cover;
-    }
-  }
-
-  .select_plan_cards {
-    flex-direction: column;
-
-    &_card {
-      width: 100%;
-    }
-  }
-
-  .contacts_af {
-    flex-direction: column;
-  }
-
-  .contacts_adress,
-  .contacts_form {
-    width: 100% !important;
-  }
-
-  .contacts_adress {
-    align-items: center;
-    text-align: center;
-  }
-
   .hero-section_description {
     text-align: center;
   }
 
-  .our_classes_description,
-  .team_description,
-  .select_plan_description {
+  #cookieBanner {
+    display: none !important;
+  }
+
+  .hero-section_title {
+    text-align: center;
+  }
+
+  #select-hero,
+  #survivor {
+    padding: 50px 0;
+  }
+
+  .survivor-right {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .gods-cards-card {
     width: 100%;
   }
 
-  #cookieBanner {
-    display: none !important;
+  .war-info {
+    flex-direction: column;
+
+    .war-left {
+      width: 100%;
+    }
+
+    .war-right {
+      width: 100%;
+
+      .war-right-images-image {
+        .skill-info {
+          height: auto;
+        }
+      }
+    }
+  }
+  .form-description {
+    text-align: center;
+  }
+  .footer_middle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-input form {
+    width: 100% !important;
+  }
+
+  .select-hero {
+    flex-direction: column;
+
+    &-left,
+    &-right {
+      width: 100%;
+    }
   }
 }
 

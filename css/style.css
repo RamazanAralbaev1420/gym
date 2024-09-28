@@ -26,9 +26,10 @@ html {
 body {
   height: 100%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  background-color: #1a1c20;
+  background-color: rgba(26, 28, 32, 0.1294117647);
   color: #fff;
   font-size: 16px;
+  background-color: #1b1c20;
 }
 
 .accept {
@@ -39,7 +40,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 50px;
-  background-image: url("../images/accept_back.webp");
+  background-image: url("../images/accept-back.webp");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -72,18 +73,18 @@ button {
 .default_btn {
   width: 100%;
   height: 50px;
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff4d00;
+  background-color: #819d26;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.3s linear;
 }
 .default_btn:hover {
   background-color: #fff;
-  color: #ff4d00;
+  color: #819d26;
 }
 .default_btn button {
   cursor: pointer;
@@ -108,7 +109,6 @@ header {
   width: 100%;
   height: 80px;
   position: fixed;
-  top: 0;
   left: 0;
   z-index: 5000000;
 }
@@ -141,12 +141,13 @@ header.scrolled {
   font-weight: 600;
 }
 .nav_links a:hover {
-  color: #ff4d00;
+  color: #819d26;
 }
 
 .header {
   width: 100%;
   height: 80px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,10 +161,6 @@ header.scrolled {
 .header .logo img {
   width: 100%;
   height: 80px;
-}
-
-p {
-  color: #879da9;
 }
 
 .close_btn span {
@@ -240,8 +237,17 @@ p {
   height: 100vh;
   background-image: url("../images/hero-section.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center center;
+}
+#hero-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(22, 19, 19, 0.431372549);
 }
 
 .hero-section {
@@ -252,11 +258,15 @@ p {
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+  position: relative;
+  left: 0;
+  z-index: 30;
 }
 .hero-section_title {
   display: flex;
   justify-content: flex-start;
   margin-top: 100px;
+  font-size: 28px;
 }
 .hero-section_description {
   display: flex;
@@ -266,267 +276,248 @@ p {
   width: 300px;
 }
 
-/* about us */
-#about_us {
-  margin: 100px 0;
+#gods {
+  padding: 100px 0;
+  background-image: url("../images/back.jpg");
 }
 
-.about_us {
+.gods {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-.about_us_left {
-  width: 50%;
-}
-.about_us_left_title {
-  margin-bottom: 30px;
-}
-.about_us_right {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-}
-.about_us_right .about_us_image {
-  overflow: hidden;
-  padding: 6px;
-}
-.about_us_right .about_us_image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.cardBox {
-  border-radius: 10px;
-  box-shadow: 3px 2px 7px rgba(250, 250, 250, 0.4);
-}
-
-/* our classes */
-#our_classes {
-  margin: 100px 0;
-}
-
-.our_classes {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.our_classes_description {
-  width: 60%;
-  margin-top: 10px;
+.gods-title {
   text-align: center;
   margin-bottom: 50px;
 }
-.our_classes_cards {
+.gods-cards {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: -15px;
+  gap: 50px;
 }
-.our_classes_cards_card {
-  width: calc(33.3333333333% - 30px);
-  height: 400px;
+.gods-cards-card {
+  width: 47%;
+  height: 360px;
+  position: relative;
+  left: 0;
   overflow: hidden;
-  margin: 15px;
+  border-radius: 20px;
 }
-.our_classes_cards_card_image {
-  width: 100%;
-  height: 65%;
-}
-.our_classes_cards_card_image img {
+.gods-cards-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  transition: all 0.2s linear;
+  border-radius: 20px;
 }
-.our_classes_cards_card_info {
-  height: 35%;
-  padding: 0 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.our_classes_cards_card_info_title {
-  margin-bottom: 10px;
+.gods-cards-card img:hover {
+  scale: 1.1;
 }
 
-#team {
-  margin: 100px 0;
+#select-hero {
+  padding: 100px 0 0px 0;
 }
 
-.team {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.team_description {
-  width: 60%;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 50px;
-}
-.team_cards {
+.select-hero {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-.team_cards_card,
-.team_cards .swiper-slide {
-  width: 33.3333333333%;
-  height: 504px;
-}
-.team_cards_card_image,
-.team_cards .swiper-slide_image {
-  width: 100%;
-  height: 85%;
-  overflow: hidden;
-}
-.team_cards_card_image img,
-.team_cards .swiper-slide_image img {
-  object-fit: cover;
-}
-.team_cards_card_info,
-.team_cards .swiper-slide_info {
-  width: 100%;
-  height: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.team_cards_card_info {
-  padding: 15px;
-  text-align: center;
-}
-
-.orange-text {
-  color: orange;
-}
-
-#select_plan {
-  margin: 100px 0;
-}
-
-.select_plan {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.select_plan_description {
-  width: 60%;
-  text-align: center;
-  margin-top: 10px;
-}
-.select_plan_cards {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
   gap: 30px;
 }
-.select_plan_cards_card {
-  width: 33.3333333333%;
-  height: 400px;
-  padding: 20px;
+.select-hero-left {
+  width: 50%;
+  min-height: 360px;
+}
+.select-hero-left img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.select-hero-right {
+  width: 50%;
+  padding: 20px 0 0;
+}
+.select-hero-right-title {
+  margin-bottom: 20px;
+}
+
+#survivor {
+  width: 100%;
+  padding: 100px 0;
+}
+
+.survivor {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+.survivor-left {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+.survivor-left-title {
+  margin-bottom: 20px;
+}
+.survivor-right {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.survivor-right img {
+  width: 50%;
+  border-radius: 20px;
+  height: 400px;
+}
+
+#war {
+  padding: 100px 0;
+}
+
+.war {
+  width: 100%;
+  display: flex;
+  min-height: 600px;
+  flex-direction: column;
+}
+.war-title {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+.war-info {
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.select_plan_cards_card_title {
-  color: #ff4d00;
+.war-left {
+  width: 50%;
 }
-.select_plan_cards_card_price {
-  font-size: 40px;
+.war-right {
+  width: 50%;
 }
-.select_plan_cards_card_items {
+.war-right-images {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  text-align: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.war-right-images-image {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.war-right-images-image .skill-info {
+  width: 100%;
+  border-radius: 10px;
+  height: 100px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-}
-
-.select_plan_cards_card_btn {
-  width: 100%;
-}
-
-.contacts_af {
-  width: 100%;
-  display: flex;
-  gap: 50px;
-  justify-content: space-between;
-}
-.contacts_af .contacts_adress {
-  width: 46%;
-  display: flex;
+  padding: 10px;
   flex-direction: column;
-  gap: 10px;
+  background-color: #f39812;
+  font-weight: 600;
+  font-size: 20px;
 }
-.contacts_af .contacts_form {
-  width: 46%;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.war-right-images-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 
-.form_inner {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
+#politicCheck {
+  background-color: red;
 }
-.form_inner .checkText {
+
+.checkText {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 20px;
   font-size: 14px;
 }
-.form_inner .checkText input {
+.checkText input {
   width: 20px;
   height: 20px;
   margin-left: 6px;
   margin-top: 6px;
 }
-.form_inner .name_phone {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-}
-.form_inner input {
+.checkText span {
   width: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border: 1px solid gray;
-  padding: 7px 10px;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 18px;
+}
+
+#form {
+  width: 100%;
+  padding-top: 100px;
+  height: 450px;
+  background-image: url("../images/form-back.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+#form::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3019607843);
+}
+#form .form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 30;
+  font-size: 20px;
   gap: 20px;
+}
+#form .form-input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#form .form-input form {
+  width: 60%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+#form .form-input form input {
+  font-size: 20px;
+  padding: 5px 15px;
+}
+#form .form-input form .for {
+  display: flex;
+  gap: 5px;
+}
+#form .form-input form button {
+  width: 30%;
+  border-radius: 0;
+}
+#form .form svg {
+  fill: #819d26;
 }
 
 #footer {
-  margin-top: 100px;
   border-top: 1px solid gray;
+  background-color: #1a1c20;
 }
 
 .footer {
   width: 100%;
+  height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -579,24 +570,6 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
   }
-  .about_us {
-    flex-direction: column;
-  }
-  .about_us_left {
-    width: 100%;
-  }
-  .about_us_left_title {
-    text-align: center;
-  }
-  .about_us_right {
-    width: 100%;
-  }
-  .our_classes_cards {
-    flex-wrap: wrap;
-  }
-  .our_classes_cards_card {
-    width: 42%;
-  }
   .footer {
     flex-direction: column;
   }
@@ -612,51 +585,65 @@ input::-webkit-inner-spin-button {
   #accept_mobile_container {
     display: block;
   }
+  .survivor {
+    border-top: 1px solid gray;
+  }
 }
 @media (max-width: 575.98px) {
   .container {
     max-width: 100%;
     padding: 0 16px;
   }
-  .our_classes_cards {
-    flex-wrap: wrap;
-  }
-  .our_classes_cards_card {
-    width: 100%;
-  }
-  .team_cards_card_image {
-    width: 100%;
-  }
-  .team_cards_card_image img {
-    object-fit: cover;
-  }
-  .select_plan_cards {
-    flex-direction: column;
-  }
-  .select_plan_cards_card {
-    width: 100%;
-  }
-  .contacts_af {
-    flex-direction: column;
-  }
-  .contacts_adress,
-  .contacts_form {
-    width: 100% !important;
-  }
-  .contacts_adress {
-    align-items: center;
-    text-align: center;
-  }
   .hero-section_description {
     text-align: center;
   }
-  .our_classes_description,
-  .team_description,
-  .select_plan_description {
-    width: 100%;
-  }
   #cookieBanner {
     display: none !important;
+  }
+  .hero-section_title {
+    text-align: center;
+  }
+  #select-hero,
+  #survivor {
+    padding: 50px 0;
+  }
+  .survivor-right {
+    flex-direction: column;
+  }
+  .survivor-right img {
+    width: 100%;
+  }
+  .gods-cards-card {
+    width: 100%;
+  }
+  .war-info {
+    flex-direction: column;
+  }
+  .war-info .war-left {
+    width: 100%;
+  }
+  .war-info .war-right {
+    width: 100%;
+  }
+  .war-info .war-right .war-right-images-image .skill-info {
+    height: auto;
+  }
+  .form-description {
+    text-align: center;
+  }
+  .footer_middle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .form-input form {
+    width: 100% !important;
+  }
+  .select-hero {
+    flex-direction: column;
+  }
+  .select-hero-left, .select-hero-right {
+    width: 100%;
   }
 }
 @media (min-width: 1500px) {

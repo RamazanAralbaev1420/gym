@@ -1,42 +1,7 @@
-const linkYes = `https://amazon.pl/?vote=yes`; //здесь нужго водить линки
-const linkNo = `https://amazon.pl/?vote=no`;  //здесь нужго водить линки
+const linkYes = `https://amazon.pl/?vote=yes`; //здесь нужно водить линки
+const linkNo = `https://amazon.pl/?vote=no`; //здесь нужно водить линки
 
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: true,
-  spaceBetween: 30,
-  breakpoints: {
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    668: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    470: {
-      slidesPerView: 1,
-      spaceBetween: 10,
-    },
-  },
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
 
 // burger menu
 const open_btn = document.querySelector('.open_btn');
